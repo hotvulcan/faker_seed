@@ -1,0 +1,2 @@
+module FakerSeed
+end
