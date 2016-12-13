@@ -18,7 +18,7 @@ class FakeGenerator < Rails::Generators::Base
 			quant.times do
 				attributes = fake_attributes(@model)
 				m = @model.new
-				m.assign_attributes(attributes, :without_protection => true)
+				m.assign_attributes(attributes)
 				m.save(validate: false)
 				m.touch
 				m.save
