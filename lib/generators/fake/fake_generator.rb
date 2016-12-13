@@ -25,7 +25,7 @@ class FakeGenerator < Rails::Generators::Base
 				total += 1
 			end
 
-			say_status "created", "Created #{total} records on the table #{table.pluralize.camelize}", :green
+			print "created, Created #{total} records on the table #{table.pluralize.camelize}"
 			
 		elsif behavior == :revoke
 			total = 0
@@ -34,7 +34,7 @@ class FakeGenerator < Rails::Generators::Base
 				total += 1
 			end
 
-			say_status "destroyed", "Removed #{total} records from the table #{table.pluralize.camelize}", :red
+			print "destroyed, Removed #{total} records from the table #{table.pluralize.camelize}"
 		end
 	end
 
