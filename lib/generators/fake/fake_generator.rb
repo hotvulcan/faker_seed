@@ -7,7 +7,7 @@ class FakeGenerator < Rails::Generators::Base
 
 	argument :table, :type => :string
 	class_option :quant, :type => :string, :required => false, :aliases => "-n"
-	class_option :all_models, :type => :boolean, :required => false, :aliases => "-a"
+	
 
 	def generate_fake
 
@@ -19,7 +19,7 @@ class FakeGenerator < Rails::Generators::Base
 			quant.times do
 				attributes = fake_attributes(@model)
 				m = @model.new
-				m.assign_attributes(attributes, :without_protection => true)
+				m.assign_attributes(attributes)
 				m.save(validate: false)
 				m.touch
 				m.save
